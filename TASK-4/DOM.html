@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE RATINGS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">MOVIE RATINGS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        </div>
+    </nav>
+
+    <div class="container my-2">
+        <form id="movie">
+
+            <div class="form-group">
+                <label for="moviename">Movie Name</label>
+                <input type="text" id="moviename" name="moviename"><br>
+    
+            </div>
+
+            <div class="form-group">
+
+                <label for="rating">IMDB Rating</label>
+                <input type="text" id="rating" name="rating"><br>
+
+            </div>
+            
+           
+        </form>
+    
+        <button onclick="func()">Submit</button>
+        <br>
+
+
+    </div>
+
+   
+<div class="container">
+    <table class="table" id="addtable">
+        <tr>
+            <th>Movie</th>
+            <th>Rating</th>
+        </tr>
+
+    </table>
+
+</div>
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+
+    function func() {
+        let movieinput = document.getElementById("moviename").value;
+        let ratings = document.getElementById("rating").value;
+
+        let tablerow = document.getElementById("addtable").insertRow(-1);
+        let row1 = tablerow.insertCell(0);
+        let row2 = tablerow.insertCell(1);
+
+        row1.innerHTML = movieinput;
+        row2.innerHTML = ratings;
+
+        document.getElementById("moviename").value = " ";
+        document.getElementById("rating").value = " ";
+    }
+
+
+</script>
+
+</html>
